@@ -1,17 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using AutoMapper.Configuration;
 using Myproject.Infraestructure.Mapper;
 
 namespace Myproject.Infraestructure.Service
 {
-    public class ServiceCollectionExtensions
+    public static class ServiceCollectionExtensions
     {
 
         public static IServiceCollection AddCustomApplication(this IServiceCollection services, IConfiguration configuration)
@@ -104,20 +99,20 @@ namespace Myproject.Infraestructure.Service
 
                  return new CalendarioInsuficienciasDataSource(sqlServerConnection);
              });
+             */
 
-
-             #endregion*/
+             #endregion
 
             return services;
         }
 
-        public static IServiceCollection AddDbContext(this IServiceCollection services, IConfiguration configuration)
+        /*public static IServiceCollection AddDbContext(this IServiceCollection services, IConfiguration configuration)
         {
             //var sqlServerConnection = services.BuildServiceProvider()
             //    .GetRequiredService<IOptions<AppSettings>>().Value
             //    .ConnectionStrings.SqlServerConnection;
             //services.AddDbContext<SqlServerDbContext>(options => options.UseSqlServer(sqlServerConnection));
             return services;
-        }
+        }*/
     }
 }
